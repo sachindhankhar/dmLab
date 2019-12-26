@@ -61,9 +61,9 @@ public class pbq1{
                 Random rand = new Random();
                 for(String key:hm.keySet()){
                     for(int i=0;i<(sampleSize*hm.get(key)/(data.size()-1));++i){
-                        int randKey = rand.nextInt(data.size())+1;
+                        int randKey = rand.nextInt(data.size()-1)+1;
                         while(column.get(randKey-1).equals(key) && randomKeys.containsKey(randKey)){
-                            randKey = rand.nextInt(data.size())+1;
+                            randKey = rand.nextInt(data.size()-1)+1;
                         }
                         randomKeys.put(randKey,1);
                         for(String cell:data.get(randKey)) System.out.print(", "+cell);
